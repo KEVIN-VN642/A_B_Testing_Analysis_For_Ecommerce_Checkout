@@ -71,7 +71,7 @@ def check_sample_ratio_mismatch(df, expected_ratio=0.5, alpha=0.001):
     print(f"   Expected split: {expected_ratio:.1%} / {1-expected_ratio:.1%}")
     print(f"   Chi-square statistic: {chi2_stat:.4f}")
     print(f"   P-value: {p_value:.6f}")
-    print(f"   Result: {'✅ PASS' if p_value > alpha else '❌ FAIL - INVESTIGATE'}")
+    print(f"   Result: {'PASS' if p_value > alpha else 'FAIL - INVESTIGATE'}")
 
     return p_value > alpha
 
@@ -93,7 +93,7 @@ def analyze_conversion_rate(df):
         conversion_summary['total_revenue'] / conversion_summary['sessions']
     )
     
-    print("🎯 PRIMARY METRIC: CONVERSION RATE")
+    print("PRIMARY METRIC: CONVERSION RATE")
     print("=" * 50)
     print()
     
@@ -138,24 +138,24 @@ def analyze_conversion_rate(df):
     pooled_se = np.sqrt(2 * pooled_p * (1 - pooled_p) / min(control_sessions, treatment_sessions))
     observed_power = 1 - stats.norm.cdf(1.96 - observed_effect / pooled_se)
     
-    print(f"📊 Statistical Test Results:")
+    print(f" Statistical Test Results:")
     print(f"   Control conversion rate:    {control_rate:.3%}")
     print(f"   Treatment conversion rate:  {treatment_rate:.3%}")
     print(f"   95% CI Control:             [{control_ci[0]:.3%}, {control_ci[1]:.3%}]")
     print(f"   95% CI Treatment:           [{treatment_ci[0]:.3%}, {treatment_ci[1]:.3%}]")
     print()
-    print(f"🎯 Effect Size:")
+    print(f" Effect Size:")
     print(f"   Absolute lift:              +{absolute_lift:.3%}")
     print(f"   Relative lift:              +{relative_lift:.1f}%")
     print(f"   Absolute lift CI:           {absolute_lift_ci[0]:.3%} to {absolute_lift_ci[1]:.3%}")
     print()
-    print(f"🧪 Statistical Significance:")
+    print(f"Statistical Significance:")
     print(f"   Z-statistic:                {z_stat:.4f}")
     print(f"   P-value:                    {p_value:.6f}")
-    print(f"   Significant (α=0.05):       {'✅ YES' if p_value < 0.05 else '❌ NO'}")
+    print(f"   Significant (α=0.05):       {' YES' if p_value < 0.05 else '❌ NO'}")
     print(f"   Observed power:             {observed_power:.1%}")
     
-    print("💰 Revenue Per User:")
+    print(" Revenue Per User:")
     print(f"   Control:                    ${conversion_summary.loc['control', 'revenue_per_user']:.2f}")
     print(f"   Treatment:                  ${conversion_summary.loc['treatment', 'revenue_per_user']:.2f}")
     print(f"   Revenue lift:               {(conversion_summary.loc['treatment', 'revenue_per_user'] / conversion_summary.loc['control', 'revenue_per_user']-1)*100:.2f}%")
@@ -179,7 +179,7 @@ def segmentation_analysis(df, segment_col, min_sample_size=100):
         Minimum sample size per segment for statistical testing
     """
     
-    print(f"📱 SEGMENTATION ANALYSIS: {segment_col.upper()}")
+    print(f" SEGMENTATION ANALYSIS: {segment_col.upper()}")
     print("=" * 60)
     
     segments = df[segment_col].unique()
@@ -225,7 +225,7 @@ def segmentation_analysis(df, segment_col, min_sample_size=100):
                 'significant': p_value < 0.05
             })
             
-            significance = '✅ SIG' if p_value < 0.05 else '❌ NS'
+            significance = ' SIG' if p_value < 0.05 else ' NS'
             print(f"{segment:12} | Control: {control_rate:.1%} | Treatment: {treatment_rate:.1%} | "
                   f"Lift: {relative_lift:+.1f}% | p={p_value:.3f} | {significance}")
         else:
