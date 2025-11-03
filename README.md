@@ -86,7 +86,7 @@ In this section we will perform statistical analyis on the primary metric **conv
 |--------------------------------------------|---------------------------------|----------------------------------|------------------------|
 |Control conversion rate:  10.309% <br>      | Absolute lift: +4.306% <br>     | Z-statistic: 6.5138 <br>         | Control: $21.79 <br>
 | Treatment conversion rate:  14.614% <br>   |Relative lift:  +41.8% <br>      |P-value:     0.000000 <br>        |Treatment:  $31.56 <br>
-| 95% CI Control:   [9.462%, 11.155%] <br>   |Absolute lift CI: 3.01% to 5.60% |Significant (α=0.05): ✅ YES     |Revenue lift  44.79% <br>
+| 95% CI Control:   [9.462%, 11.155%] <br>   |Absolute lift CI: 3.01% to 5.60% |Significant (α=0.05):  YES     |Revenue lift  44.79% <br>
 |95% CI Treatment: [13.639%, 15.589%] <br>   |Absolute lift CI: 3.01% to 5.60% | Observed power:    100.0% <br>   |
     
 
@@ -97,24 +97,24 @@ In this section we will perform statistical analyis on the primary metric **conv
 #### Device Type
 | Segment         | Control Rate | Treatment Rate |   Lift   |   p   | Significant |
 |-----------------|--------------|----------------|----------|-------|-------------|
-|      Mobil      |    8.8%      |    13.2%       |  46.6%   | 0.000 |   ✅ SIG    
-|     Desktop     |    13.2%     |    18.0%       |  36.3%   | 0.000 |   ✅ SIG
-|      Tablet     |    8.1%      |    11.3%       |  40.0%   | 0.224 |   ❌ NS
+|      Mobil      |    8.8%      |    13.2%       |  46.6%   | 0.000 |    SIG    
+|     Desktop     |    13.2%     |    18.0%       |  36.3%   | 0.000 |    SIG
+|      Tablet     |    8.1%      |    11.3%       |  40.0%   | 0.224 |    NS
 
 
 #### User Type
 |    Segment      | Control Rate | Treatment Rate |   Lift   |   p   | Significant |
 |-----------------|--------------|----------------|----------|-------|-------------|
-| returning_user  |    11.0%     |    15.6%       |  41.9%   | 0.000 |   ✅ SIG    
-| new_User        |    9.3%      |    13.2%       |  42.4%   | 0.000 |   ✅ SIG
+| returning_user  |    11.0%     |    15.6%       |  41.9%   | 0.000 |    SIG    
+| new_User        |    9.3%      |    13.2%       |  42.4%   | 0.000 |    SIG
 
 #### Traffic Source
 |    Segment      | Control Rate | Treatment Rate |   Lift   |   p   | Significant |
 |-----------------|--------------|----------------|----------|-------|-------------|
-|direct       | 10.2% | 14.3% | 40.3% | 0.006 | ✅ SIG
-|organic      | 10.7% | 14.0% | 31.0% | 0.001 | ✅ SIG
-|paid         | 10.0% | 15.6% | 55.1% | 0.000 | ✅ SIG
-|social       | 9.8% | 14.7% | 49.5% | 0.017 | ✅ SIG
+|direct       | 10.2% | 14.3% | 40.3% | 0.006 |  SIG
+|organic      | 10.7% | 14.0% | 31.0% | 0.001 |  SIG
+|paid         | 10.0% | 15.6% | 55.1% | 0.000 |  SIG
+|social       | 9.8% | 14.7% | 49.5% | 0.017 |  SIG
 
 **Key Insights**:
 - **Mobile users** show the largest improvement (+28.3% lift)
@@ -125,9 +125,9 @@ Treatment is particularly effective for mobile-first customer segments
 
 ## 6. Recommendation
 Decision Criteria Scorecard:<br>
-   Statistical Significance:  ✅ PASS     (p = 0.0000)<br>
-   Practical Significance:    ✅ PASS     (4.31% lift, confidence interval [3.01, 5.60])<br>
-   Business Impact:           ✅ PASS     ($888,275)<br>
+   Statistical Significance:  PASS     (p = 0.0000)<br>
+   Practical Significance:    PASS     (4.31% lift, confidence interval [3.01, 5.60])<br>
+   Business Impact:           PASS     ($888,275)<br>
 TOTAL SCORE: 3/3 criteria met<br>
 Since all criteria pass the requirement, the practical significance is outside and smaller of confidence interval for absolute lift. We decide to launch the change with high level of confidence.
 
