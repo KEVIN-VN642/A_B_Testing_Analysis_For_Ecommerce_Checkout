@@ -60,7 +60,7 @@ The result show that the experiment data align well with design split ratio (50/
   * Expected split: 50.0% / 50.0%<br>
   * Chi-square statistic: 0.7396<br>
   * P-value: 0.389789 <br>
-  * Result: ✅ PASS
+  * Result:  PASS
 
 ### 3.3 Randomization Check
 We expect that user characteristics are balanced between groups. The bar plot shows the data is quite balanced in each category.
